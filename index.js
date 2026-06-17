@@ -1084,35 +1084,6 @@ function formatUptime(seconds) {
 }
 
 // ============================================================
-// SELF-PING - Prevent Render from sleeping
-// FIX: only ping if RENDER_EXTERNAL_URL is set (skip useless localhost ping)
-// ============================================================
-const SELF_PING_INTERVAL = 10 * 60 * 1000;
-
-function startSelfPing() {
-  const renderUrl = process.env.RENDER_EXTERNAL_URL;
-  if (!renderUrl) {
-    addLog(
-      "[KeepAlive] No RENDER_EXTERNAL_URL set - self-ping disabled (running locally)",
-    );
-    return;
-  }
-  setInterval(() => {
-    const protocol = renderUrl.startsWith("https") ? https : http;
-    protocol
-      .get(`${renderUrl}/ping`, (res) => {
-        // Silent success
-      })
-      .on("error", (err) => {
-        addLog(`[KeepAlive] Self-ping failed: ${err.message}`);
-      });
-  }, SELF_PING_INTERVAL);
-  addLog("[KeepAlive] Self-ping system started (every 10 min)");
-}
-
-startSelfPing();
-
-// ============================================================
 // MEMORY MONITORING
 // ============================================================
 setInterval(
