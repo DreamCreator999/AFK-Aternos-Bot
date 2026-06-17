@@ -1,111 +1,105 @@
 {
-  "name": "AFK Bot",
-  "bot-account": {
+  "bot": {
+    "name": "AFK Bot",
     "username": "TheRealGodBot",
-    "password": "",
-    "type": "offline"
+    "authType": "offline",
+    "version": "auto"
   },
   "server": {
-    "ip": "HeavencraftSMP.aternos.me",
+    "host": "HeavencraftSMP.aternos.me",
     "port": 30718,
-    "version": "",
-    "try-creative": false
+    "tryCreative": false
   },
-  "position": {
+  "network": {
+    "autoReconnect": {
+      "enabled": true,
+      "baseDelayMs": 2000,
+      "maxDelayMs": 120000,
+      "exponentialBackoff": true
+    }
+  },
+  "targetPosition": {
     "enabled": true,
     "x": 0,
     "y": 100,
-    "z": 0
-  },
-  "utils": {
-    "auto-auth": {
-      "enabled": true,
-      "password": "chalol78"
-    },
-    "anti-afk": {
-      "enabled": true,
-      "sneak": true
-    },
-    "chat-messages": {
-      "enabled": true,
-      "repeat": true,
-      "repeat-delay": 120,
-      "messages": [
-        "I'm a regular player",
-        "Subscribe to Dream B. Frames!",
-        "I like to play Minecraft!",
-        "yo who got that new DREAM B. FRAMES track on repeat? 🔥",
-        "this bass line goes absolutely demonic fr fr",
-        "grinding netherite while blasting Phonk hits different",
-        "STREAM DREAM B. FRAMES FOR 200+ FPS NO CAP 🚀",
-        "bruh that bass drop actually shook my entire setup",
-        "who got a link to the new Dream B. Frames release??",
-        "this beat is driving me insane wtf, too clean 😮‍💨",
-        "imagine not having DREAM B. FRAMES in your gaming playlist smh",
-        "pvp clip went hard, need that background audio track ASAP",
-        "sub to Dream B. Frames or you miss the next drop 🎧",
-        "pure adrenaline in audio form right here",
-        "we need this track on the server radio mod immediately",
-        "Dream B. Frames dropping absolute heaters lately 😤",
-        "that phonk/funk rhythm got me mining at lightspeed",
-        "go subscribe to Dream B. Frames on YT right now, don't sleep on it",
-        "the mix on this new track is actually generational",
-        "certified banger alert 🚨 check out Dream B. Frames!",
-        "my ears are blessed, this production quality is wild",
-        "drop the spotify link for Dream B. Frames already!",
-        "blasting heavy beats while clearing the monument, let's go 🔥",
-        "if you ain't listening to Dream B. Frames you're playing wrong",
-        "type !music in chat to get the latest track name!",
-        "that bass is hitting harder than a warden spike 💀",
-        "Dream B. Frames running the underground music scene fr"
-      ]
-    },
-    "chat-log": true,
-    "auto-reconnect": true,
-    "auto-reconnect-delay": 2000,
-    "max-reconnect-delay": 120000
-  },
-  "movement": {
-    "enabled": true,
-    "circle-walk": {
-      "enabled": true,
-      "radius": 4,
-      "speed": 3000
-    },
-    "look-around": {
-      "enabled": true,
-      "interval": 5000
-    },
-    "random-jump": {
-      "enabled": true,
-      "interval": 10000
-    }
+    "z": 0,
+    "dimension": "overworld"
   },
   "modules": {
-    "avoidMobs": true,
-    "combat": true,
-    "beds": false,
-    "chat": true,
-    "console-commands": true
-  },
-  "combat": {
-    "attack-mobs": true,
-    "auto-eat": true
-  },
-  "beds": {
-    "pick-up-day": false,
-    "place-night": false
-  },
-  "discord": {
-    "enabled": false,
-    "webhookUrl": "YOUR_DISCORD_WEBHOOK_URL_HERE",
-    "events": {
-      "connect": true,
-      "disconnect": true,
-      "chat": false
+    "autoAuth": {
+      "enabled": false,
+      "password": "<ENV_AUTH_PASSWORD>"
+    },
+    "antiAfk": {
+      "enabled": true,
+      "sneak": true,
+      "swingArm": true,
+      "randomJumpIntervalMs": 10000,
+      "lookAroundIntervalMs": 5000,
+      "circleWalk": {
+        "enabled": true,
+        "radius": 4,
+        "speedMs": 3000
+      }
+    },
+    "combatAndSurvival": {
+      "enabled": true,
+      "attackHostiles": true,
+      "avoidMobs": true,
+      "autoEat": true,
+      "autoBed": {
+        "enabled": true,
+        "placeAtNight": true,
+        "pickUpAtDay": true
+      }
+    },
+    "chat": {
+      "enabled": true,
+      "logToConsole": true,
+      "autoRespond": true,
+      "spammer": {
+        "enabled": true,
+        "intervalMs": 120000,
+        "randomizeOrder": true,
+        "messages": [
+          "I'm a regular player",
+          "Subscribe to Dream B. Frames!",
+          "I like to play Minecraft!",
+          "yo who got that new DREAM B. FRAMES track on repeat? 🔥",
+          "this bass line goes absolutely demonic fr fr",
+          "grinding netherite while blasting Phonk hits different",
+          "STREAM DREAM B. FRAMES FOR 200+ FPS NO CAP 🚀",
+          "bruh that bass drop actually shook my entire setup",
+          "who got a link to the new Dream B. Frames release??",
+          "this beat is driving me insane wtf, too clean 😮‍💨",
+          "imagine not having DREAM B. FRAMES in your gaming playlist smh",
+          "pvp clip went hard, need that background audio track ASAP",
+          "sub to Dream B. Frames or you miss the next drop 🎧",
+          "pure adrenaline in audio form right here",
+          "we need this track on the server radio mod immediately",
+          "Dream B. Frames dropping absolute heaters lately 😤",
+          "that phonk/funk rhythm got me mining at lightspeed",
+          "go subscribe to Dream B. Frames on YT right now, don't sleep on it",
+          "the mix on this new track is actually generational",
+          "certified banger alert 🚨 check out Dream B. Frames!",
+          "my ears are blessed, this production quality is wild",
+          "drop the spotify link for Dream B. Frames already!",
+          "blasting heavy beats while clearing the monument, let's go 🔥",
+          "if you ain't listening to Dream B. Frames you're playing wrong",
+          "type !music in chat to get the latest track name!",
+          "that bass is hitting harder than a warden spike 💀",
+          "Dream B. Frames running the underground music scene fr"
+        ]
+      }
+    },
+    "discordRpc": {
+      "enabled": false,
+      "webhookUrl": "<ENV_DISCORD_WEBHOOK>",
+      "events": {
+        "onConnect": true,
+        "onDisconnect": true,
+        "onChat": false
+      }
     }
-  },
-  "chat": {
-    "respond": true
   }
 }
